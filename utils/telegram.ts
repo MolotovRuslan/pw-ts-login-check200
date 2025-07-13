@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const TOKEN = '6331809895:AAEAkdLeZZG02JSVMZ3AY7IsQjBlS9jrhtQ';
-export const CHAT_ID = '218858759'; // Replace with actual chat ID or channel name
+export const TOKEN = '';
+export const CHAT_ID = ''; // Replace with actual chat ID or channel name
 
 
                                       // Send MSG function
