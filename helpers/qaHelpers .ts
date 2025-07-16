@@ -1,7 +1,7 @@
-import { expect, Page, APIRequestContext/* request */ } from '@playwright/test';
-import fetch from 'node-fetch';
+import { expect, Page, APIRequestContext /* request */ } from '@playwright/test';
+import { fetch } from 'undici';
 
-import { sendToSlack} from '../utils/slack';
+import { sendToSlack } from '../utils/slack';
 import { sendToTelegram } from '../utils/telegram';
 import { escapeMarkdown } from '../utils/telegram';
 
@@ -81,7 +81,7 @@ class mf {
   }
 
   // ✅ 11: Checks that a given text does not exist in the HTML content at a specific URL
-    async notExistInHtml(url: string, text: string) {
+  async notExistInHtml(url: string, text: string) {
     const res = await fetch(url);
     const html = await res.text();
     expect(html.includes(text)).toBeFalsy();
@@ -181,7 +181,6 @@ class mf {
     const cls = data.lighthouseResult.audits['cumulative-layout-shift'].displayValue;
 
     console.log(`Mobile Score: ${mobScore}`);
-
 
     const msg = `PageSpeed Report: ${name}\n${pageLink}\n\n` +
       `📱 Mobile Score: ${mobScore}\n` +
