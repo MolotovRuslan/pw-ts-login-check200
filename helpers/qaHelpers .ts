@@ -3,7 +3,6 @@ import { fetch } from 'undici';
 
 import { sendToSlack } from '../utils/slack';
 import { sendToTelegram } from '../utils/telegram';
-import { escapeMarkdown } from '../utils/telegram';
 
 
 
