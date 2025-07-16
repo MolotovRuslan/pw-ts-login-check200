@@ -21,24 +21,24 @@ export async function sendToTelegram(message: string) {
 }
 
 
-export async function escapeMarkdown(text: string) {
-  return text
-    .replace(/_/g, '\\_')
-    .replace(/\*/g, '\\*')
-    .replace(/\[/g, '\\[')
-    .replace(/\]/g, '\\]')
-    .replace(/\(/g, '\\(')
-    .replace(/\)/g, '\\)')
-    .replace(/~/g, '\\~')
-    .replace(/`/g, '\\`')
-    .replace(/>/g, '\\>')
-    .replace(/#/g, '\\#')
-    .replace(/\+/g, '\\+')
-    .replace(/-/g, '\\-')
-    .replace(/=/g, '\\=')
-    .replace(/\|/g, '\\|')
-    .replace(/{/g, '\\{')
-    .replace(/}/g, '\\}')
-    .replace(/\./g, '\\.')
-    .replace(/!/g, '\\!');
-}
+// export async function escapeMarkdown(text: string) {
+//   return text
+//     .replace(/_/g, '\\_')
+//     .replace(/\*/g, '\\*')
+//     .replace(/\[/g, '\\[')
+//     .replace(/\]/g, '\\]')
+//     .replace(/\(/g, '\\(')
+//     .replace(/\)/g, '\\)')
+//     .replace(/~/g, '\\~')
+//     .replace(/`/g, '\\`')
+//     .replace(/>/g, '\\>')
+//     .replace(/#/g, '\\#')
+//     .replace(/\+/g, '\\+')
+//     .replace(/-/g, '\\-')
+//     .replace(/=/g, '\\=')
+//     .replace(/\|/g, '\\|')
+//     .replace(/{/g, '\\{')
+//     .replace(/}/g, '\\}')
+//     .replace(/\./g, '\\.')
+//     .replace(/!/g, '\\!');
+// }

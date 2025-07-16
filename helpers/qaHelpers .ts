@@ -3,6 +3,7 @@ import { fetch } from 'undici';
 
 import { sendToSlack } from '../utils/slack';
 import { sendToTelegram } from '../utils/telegram';
+// import { escapeMarkdown } from '../utils/telegram';
 
 
 
@@ -132,15 +133,15 @@ class mf {
         console.log(`${name} - ${status}`);
 
         if (status !== 200) {
-          const msgRaw = `❌ *${await escapeMarkdown(name)}* ${url}\nStatus code: *${status}*`;
+          const msgRaw = `❌ *${(name)}* ${url}\nStatus code: *${status}*`;
           failedLinks.push(msgRaw);
           await sendToTelegram(msgRaw);
           await sendToSlack(msgRaw);
         }
 
       } catch (error) {
-        const errorMessage = await escapeMarkdown((error as Error).message);
-        const errMsgRaw = `⛔ *${await escapeMarkdown(name)}* ${url}\nRequest failed: ${errorMessage}`;
+        const errorMessage =  ((error as Error).message);
+        const errMsgRaw = `⛔ *${(name)}* ${url}\nRequest failed: ${errorMessage}`;
         failedLinks.push(errMsgRaw);
         await sendToTelegram(errMsgRaw);
         await sendToSlack(errMsgRaw);
@@ -190,7 +191,7 @@ class mf {
 
     console.log(msg);
 
-    await sendToTelegram(await escapeMarkdown(msg));
+    await sendToTelegram((msg));
   }
 
 }
